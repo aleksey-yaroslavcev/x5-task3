@@ -21,11 +21,19 @@ abstract public class Human {
     }
 
     public void sleep(){
+        if(isSleeping){
+            throw new SleepException(this);
+        }
         isSleeping=true;
+        System.out.println(toString()+" пошёл спать");
     }
 
     public void wakeUp(){
+        if(!isSleeping){
+            throw new SleepException(this);
+        }
         isSleeping=false;
+        System.out.println(toString()+" проснулся");
     }
     public void introduce(){
         System.out.println("Привет! Меня зовут " + toString() + " и мне "+age+" лет.");

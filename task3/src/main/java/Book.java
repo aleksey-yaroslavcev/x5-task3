@@ -23,11 +23,11 @@ public class Book {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Book){
-            Book book=(Book)obj;
-            return (author.equals(book.author))&&
-                    (name.equals(book.name))&&
-                    (pagesCount==book.pagesCount);
+        if (obj instanceof Book) {
+            Book book = (Book) obj;
+            return (author.equals(book.author)) &&
+                    (name.equals(book.name)) &&
+                    (pagesCount == book.pagesCount);
         }
         return false;
     }

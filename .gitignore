@@ -1,3 +1,5 @@
 /task3/target/
 /.idea/
 *.iml
+*.class
+/out/

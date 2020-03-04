@@ -4,11 +4,9 @@ public class Intern extends Student implements Workable {
     }
 
     public void work() {
-        try {
-            prepareAction();
-            System.out.println(toString()+" ничего не любит делать");
-        } catch (RuntimeException e){
-            System.out.println(e.getMessage());
+        if (isSleep()) {
+            throw new SleepException(this);
         }
+        System.out.println(toString() + " ничего не любит делать");
     }
 }

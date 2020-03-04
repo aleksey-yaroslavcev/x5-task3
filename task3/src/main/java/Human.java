@@ -2,41 +2,36 @@ abstract public class Human {
     private final String firstName;
     private final String secondName;
     private final int age;
-    private boolean isSleeping=false;
+    private boolean isSleep = false;
 
-    public Human(final String firstName, final String secondName, final int age){
-        this.firstName=firstName;
-        this.secondName=secondName;
-        this.age=age;
+    public Human(final String firstName, final String secondName, final int age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = age;
     }
 
-    protected void prepareAction(){
-        if(isSleeping){
+    public boolean isSleep() {
+        return isSleep;
+    }
+
+    public void sleep() {
+        if (isSleep) {
             throw new SleepException(this);
         }
+        isSleep = true;
+        System.out.println(toString() + " пошёл спать");
     }
 
-    public boolean isSleep(){
-        return isSleeping;
-    }
-
-    public void sleep(){
-        if(isSleeping){
+    public void wakeUp() {
+        if (!isSleep) {
             throw new SleepException(this);
         }
-        isSleeping=true;
-        System.out.println(toString()+" пошёл спать");
+        isSleep = false;
+        System.out.println(toString() + " проснулся");
     }
 
-    public void wakeUp(){
-        if(!isSleeping){
-            throw new SleepException(this);
-        }
-        isSleeping=false;
-        System.out.println(toString()+" проснулся");
-    }
-    public void introduce(){
-        System.out.println("Привет! Меня зовут " + toString() + " и мне "+age+" лет.");
+    public void introduce() {
+        System.out.println("Привет! Меня зовут " + toString() + " и мне " + age + " лет.");
     }
 
     @Override

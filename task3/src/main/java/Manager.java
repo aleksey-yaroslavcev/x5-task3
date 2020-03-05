@@ -1,8 +1,20 @@
+/**
+ * Класс менеджера
+ */
 public class Manager extends Employee {
+    /**
+     * Конструктор
+     * @param firstName  имя
+     * @param secondName фамилия
+     * @param age        возраст
+     */
     public Manager(String firstName, String secondName, int age) {
         super(firstName, secondName, age);
     }
 
+    /**
+     * метод выполнения работы
+     */
     @Override
     public void work() {
         if (isSleep()) {

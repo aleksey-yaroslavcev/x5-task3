@@ -1,4 +1,11 @@
+/**
+ * главный класс программы
+ */
 public class Main {
+    /**
+     * точка входа в программу
+     * @param args аргументы командной строки
+     */
     public static void main(String[] args) {
 
         Human human = new Student("Ivan", "Ivanov", 20);

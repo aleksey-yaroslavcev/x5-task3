@@ -1,12 +1,25 @@
+/**
+ * Класс студента
+ */
 public class Student extends Human implements BookReader, BookOwner {
     private Book book = null;
     private int readedBooks = 0;
     private int readedPages = 0;
 
+    /**
+     * Конструктор
+     * @param firstName  имя
+     * @param secondName фамилия
+     * @param age        возраст
+     */
     public Student(String firstName, String secondName, int age) {
         super(firstName, secondName, age);
     }
 
+    /**
+     * метод добавления книги студенту
+     * @param book книга
+     */
     public void addBook(Book book) {
         if (isSleep()) {
             throw new SleepException(this);
@@ -23,6 +36,11 @@ public class Student extends Human implements BookReader, BookOwner {
         this.book = book;
     }
 
+    /**
+     * метод передачи книги
+     * @param bookName название книги
+     * @return экземпляр книги
+     */
     public Book giveBook(String bookName) {
         if (isSleep()) {
             throw new SleepException(this);
@@ -44,6 +62,10 @@ public class Student extends Human implements BookReader, BookOwner {
         }
     }
 
+    /**
+     * метод прочтения книги
+     * @param book книга
+     */
     public void readBook(Book book) {
         if (isSleep()) {
             throw new SleepException(this);
@@ -53,6 +75,10 @@ public class Student extends Human implements BookReader, BookOwner {
         readedPages += book.getPagesCount();
     }
 
+    /**
+     * геттер количества прочтённых книг
+     * @return количество прочтённых книг
+     */
     public int getReadedBooks() {
         if (isSleep()) {
             throw new SleepException(this);
@@ -61,6 +87,10 @@ public class Student extends Human implements BookReader, BookOwner {
         return readedBooks;
     }
 
+    /**
+     * геттер количества прочтённых страниц
+     * @return количество прочтённых страниц
+     */
     public int getReadedPages() {
         if (isSleep()) {
             throw new SleepException(this);
@@ -69,6 +99,9 @@ public class Student extends Human implements BookReader, BookOwner {
         return readedPages;
     }
 
+    /**
+     * метод выбрасывания книги
+     */
     public void dropBook() {
         if (isSleep()) {
             throw new SleepException(this);

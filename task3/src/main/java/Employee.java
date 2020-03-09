@@ -5,6 +5,7 @@ public class Employee extends Human implements Workable {
 
     /**
      * Конструктор
+     *
      * @param firstName  имя
      * @param secondName фамилия
      * @param age        возраст
@@ -14,8 +15,9 @@ public class Employee extends Human implements Workable {
     }
 
     /**
-     * метод выполнения работы
+     * {@inheritDoc}
      */
+    @Override
     public void work() {
         if (isSleep()) {
             throw new SleepException(this);

@@ -20,7 +20,8 @@ abstract public class Human {
     }
 
     /**
-     * геттер состояния сна
+     * Получить состояние сна
+     *
      * @return истина, если человек спит
      */
     public boolean isSleep() {
@@ -43,7 +44,7 @@ abstract public class Human {
      */
     public void wakeUp() {
         if (!isSleep) {
-            throw new SleepException(this);
+            throw new SleepException(this, "не может проснуться, так как не спит");
         }
         isSleep = false;
         System.out.println(toString() + " проснулся");

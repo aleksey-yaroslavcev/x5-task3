@@ -3,7 +3,8 @@
  */
 public interface BookOwner {
     /**
-     * метод добавления книги владельцу
+     * метод добавления книги
+     *
      * @param book книга
      */
     void addBook(Book book);

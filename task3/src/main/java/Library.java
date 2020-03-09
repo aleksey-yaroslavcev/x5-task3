@@ -4,12 +4,12 @@ import java.util.ArrayList;
  * Класс библиотеки
  */
 public class Library implements BookOwner {
-    private ArrayList<Book> books = new ArrayList<Book>();
+    private ArrayList<Book> books = new ArrayList<>();
 
     /**
-     * метод добавления книги в библиотеку
-     * @param book книга
+     * {@inheritDoc}
      */
+    @Override
     public void addBook(Book book) {
         if (books.contains(book)) {
             System.out.println("В библиотеке уже есть книга - " + book.toString());
@@ -23,18 +23,22 @@ public class Library implements BookOwner {
     }
 
     /**
-     * метод получения книги из библиотеки
-     * @param bookName название книги
-     * @return экземпляр книги
+     * {@inheritDoc}
      */
+    @Override
     public Book giveBook(String bookName) {
+        Book foundBook = null;
         for (Book book : books) {
             if (book.getName().equals(bookName)) {
-                books.remove(book);
-                return book;
+                foundBook = book;
             }
         }
-        throw new TakeBookException("В библиотеке нет книги - " + bookName);
+        if (foundBook != null) {
+            books.remove(foundBook);
+            return foundBook;
+        } else {
+            throw new TakeBookException("В библиотеке нет книги - " + bookName);
+        }
     }
 
     /**

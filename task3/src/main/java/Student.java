@@ -8,6 +8,7 @@ public class Student extends Human implements BookReader, BookOwner {
 
     /**
      * Конструктор
+     *
      * @param firstName  имя
      * @param secondName фамилия
      * @param age        возраст
@@ -17,9 +18,9 @@ public class Student extends Human implements BookReader, BookOwner {
     }
 
     /**
-     * метод добавления книги студенту
-     * @param book книга
+     * {@inheritDoc}
      */
+    @Override
     public void addBook(Book book) {
         if (isSleep()) {
             throw new SleepException(this);
@@ -37,10 +38,9 @@ public class Student extends Human implements BookReader, BookOwner {
     }
 
     /**
-     * метод передачи книги
-     * @param bookName название книги
-     * @return экземпляр книги
+     * {@inheritDoc}
      */
+    @Override
     public Book giveBook(String bookName) {
         if (isSleep()) {
             throw new SleepException(this);
@@ -63,9 +63,9 @@ public class Student extends Human implements BookReader, BookOwner {
     }
 
     /**
-     * метод прочтения книги
-     * @param book книга
+     * {@inheritDoc}
      */
+    @Override
     public void readBook(Book book) {
         if (isSleep()) {
             throw new SleepException(this);

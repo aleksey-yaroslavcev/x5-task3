@@ -14,7 +14,7 @@ public class Developer extends Employee {
     }
 
     /**
-     * метод выолнения работы
+     * {@inheritDoc}
      */
     @Override
     public void work() {

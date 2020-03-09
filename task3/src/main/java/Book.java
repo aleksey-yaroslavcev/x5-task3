@@ -19,7 +19,8 @@ public class Book {
     }
 
     /**
-     * геттер названия книги
+     * получить название книги
+     *
      * @return название книги
      */
     public String getName() {
@@ -27,7 +28,7 @@ public class Book {
     }
 
     /**
-     * геттер автора книги
+     * получить автора книги
      * @return автор книги
      */
     public String getAuthor() {
@@ -35,7 +36,8 @@ public class Book {
     }
 
     /**
-     * геттер количества страниц
+     * получить количество страниц
+     *
      * @return количество страниц
      */
     public int getPagesCount() {
@@ -43,19 +45,33 @@ public class Book {
     }
 
     /**
+     * получить хэшкод
+     *
+     * @return хэшкод
+     */
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+    /**
      * метод сравнения книги с другим объектом
+     *
      * @param obj любой объект
      * @return истина если сравниваемый объект таже самая книга
      */
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Book) {
-            Book book = (Book) obj;
-            return (author.equals(book.author)) &&
-                    (name.equals(book.name)) &&
-                    (pagesCount == book.pagesCount);
+        if (obj == this) {
+            return true;
         }
-        return false;
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Book book = (Book) obj;
+        return (author.equals(book.author)) &&
+                (name.equals(book.name)) &&
+                (pagesCount == book.pagesCount);
     }
 
     /**

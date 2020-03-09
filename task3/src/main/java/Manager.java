@@ -13,7 +13,7 @@ public class Manager extends Employee {
     }
 
     /**
-     * метод выполнения работы
+     * {@inheritDoc}
      */
     @Override
     public void work() {

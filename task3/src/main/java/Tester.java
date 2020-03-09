@@ -14,7 +14,7 @@ public class Tester extends Employee {
     }
 
     /**
-     * метод выполнения работы
+     * {@inheritDoc}
      */
     @Override
     public void work() {

@@ -4,6 +4,7 @@
 public class Intern extends Student implements Workable {
     /**
      * конструктор
+     *
      * @param firstName  имя
      * @param secondName фамилия
      * @param age        возраст
@@ -13,8 +14,9 @@ public class Intern extends Student implements Workable {
     }
 
     /**
-     * метод выполнения работы
+     * {@inheritDoc}
      */
+    @Override
     public void work() {
         if (isSleep()) {
             throw new SleepException(this);

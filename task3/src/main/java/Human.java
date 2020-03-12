@@ -20,6 +20,30 @@ abstract public class Human {
     }
 
     /**
+     * получить имя
+     * @return имя
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * получить фамилию
+     * @return фамилия
+     */
+    public String getSecondName() {
+        return secondName;
+    }
+
+    /**
+     * получить возраст
+     * @return возраст
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
      * Получить состояние сна
      *
      * @return истина, если человек спит

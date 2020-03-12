@@ -14,6 +14,14 @@ public class Developer extends Employee {
     }
 
     /**
+     * конструктор из базового класса
+     * @param human экземпляр человека
+     */
+    public Developer(Human human){
+        super(human);
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

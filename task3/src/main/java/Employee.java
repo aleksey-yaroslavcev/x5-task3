@@ -15,6 +15,14 @@ public class Employee extends Human implements Workable {
     }
 
     /**
+     * Конструктор из базового объекта
+     * @param human экземпляр человека
+     */
+    public Employee(Human human){
+        super(human.getFirstName(),human.getSecondName(),human.getAge());
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

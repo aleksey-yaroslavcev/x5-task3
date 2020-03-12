@@ -14,6 +14,14 @@ public class Tester extends Employee {
     }
 
     /**
+     * конструктор из базового класса
+     * @param human экземпляр человека
+     */
+    public Tester(Human human){
+        super(human);
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

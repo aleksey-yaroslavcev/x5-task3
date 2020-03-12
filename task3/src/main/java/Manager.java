@@ -13,6 +13,14 @@ public class Manager extends Employee {
     }
 
     /**
+     * конструктор из базового класса
+     * @param human экземпляр человека
+     */
+    public Manager(Human human){
+        super(human);
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

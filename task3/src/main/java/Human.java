@@ -13,7 +13,7 @@ abstract public class Human {
      * @param secondName фамилия
      * @param age        возраст
      */
-    public Human(final String firstName, final String secondName, final int age) {
+    public Human(String firstName, String secondName, int age) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.age = age;

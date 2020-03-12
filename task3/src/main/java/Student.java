@@ -3,8 +3,8 @@
  */
 public class Student extends Human implements BookReader, BookOwner {
     private Book book = null;
-    private int readedBooks = 0;
-    private int readedPages = 0;
+    private int readBooks = 0;
+    private int readPages = 0;
 
     /**
      * Конструктор
@@ -71,32 +71,32 @@ public class Student extends Human implements BookReader, BookOwner {
             throw new SleepException(this);
         }
 
-        readedBooks++;
-        readedPages += book.getPagesCount();
+        readBooks++;
+        readPages += book.getPagesCount();
     }
 
     /**
-     * геттер количества прочтённых книг
+     * получить количество прочтённых книг
      * @return количество прочтённых книг
      */
-    public int getReadedBooks() {
+    public int getReadBooks() {
         if (isSleep()) {
             throw new SleepException(this);
         }
 
-        return readedBooks;
+        return readBooks;
     }
 
     /**
-     * геттер количества прочтённых страниц
+     * получить количество прочтённых страниц
      * @return количество прочтённых страниц
      */
-    public int getReadedPages() {
+    public int getReadPages() {
         if (isSleep()) {
             throw new SleepException(this);
         }
 
-        return readedPages;
+        return readPages;
     }
 
     /**

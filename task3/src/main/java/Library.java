@@ -42,7 +42,7 @@ public class Library implements BookOwner {
     }
 
     /**
-     * геттер колечества книг в библиотеке
+     * получить количество книг в библиотеке
      * @return количество книг
      */
     public int getSize() {

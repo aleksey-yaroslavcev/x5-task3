@@ -35,6 +35,5 @@ public class Main {
         student = new Intern("Nikolay", "Nikolaev", 34);
         worker = (Workable) student;
         worker.work();
-
     }
 }

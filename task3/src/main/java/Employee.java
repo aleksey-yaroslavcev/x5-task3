@@ -19,7 +19,7 @@ public class Employee extends Human implements Workable {
      * @param human экземпляр человека
      */
     public Employee(Human human){
-        super(human.getFirstName(),human.getSecondName(),human.getAge());
+        super(human);
     }
 
     /**

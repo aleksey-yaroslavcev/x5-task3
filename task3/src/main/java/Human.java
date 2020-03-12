@@ -20,6 +20,17 @@ abstract public class Human {
     }
 
     /**
+     * Конструктор копий
+     * @param human экземпляр человека
+     */
+    public Human(Human human){
+        firstName = human.firstName;
+        secondName = human.secondName;
+        age = human.age;
+        isSleep = human.isSleep;
+    }
+
+    /**
      * получить имя
      * @return имя
      */

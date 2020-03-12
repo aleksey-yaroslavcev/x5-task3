@@ -18,6 +18,13 @@ public class Student extends Human implements BookReader, BookOwner {
     }
 
     /**
+     * конструктор из базового класса
+     * @param human экземпляр человека
+     */
+    public Student(Human human){
+        super(human);
+    }
+    /**
      * {@inheritDoc}
      */
     @Override

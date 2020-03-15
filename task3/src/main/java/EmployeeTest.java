@@ -1,5 +1,3 @@
-import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
 
@@ -87,7 +85,7 @@ public class EmployeeTest {
         int readPagesBefore=student.getReadPages();
 
         student.readBook(book3);
-        assertEquals(readBooksBefore+book3.getPagesCount(), student.getReadPages());
+        assertEquals(readPagesBefore+book3.getPagesCount(), student.getReadPages());
         assertEquals(readBooksBefore+1, student.getReadBooks());
     }
 

@@ -3,7 +3,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import static org.junit.Assert.*;
 
-public class EmployeeTest {
+public class Tests {
 
     private Employee employee1;
     private Employee employee2;
@@ -17,7 +17,7 @@ public class EmployeeTest {
     private Book book5;
     private Book book6;
 
-    public EmployeeTest(){
+    public Tests(){
         employee1 = new Tester("Ivan","Ivanov",12);
         employee2 = new Developer("Petr","Petrov",234);
         employee3 = new Manager("Vasiliy","Vasilyev",234);

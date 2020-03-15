@@ -1,6 +1,7 @@
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
+import static org.assertj.core.api.Assertions.*;
 
 import static org.junit.Assert.*;
 
@@ -18,8 +19,7 @@ public class EmployeeTest {
     private Book book5;
     private Book book6;
 
-    @Before
-    public void prepare(){
+    public EmployeeTest(){
         employee1 = new Tester("Ivan","Ivanov",12);
         employee2 = new Developer("Petr","Petrov",234);
         employee3 = new Manager("Vasiliy","Vasilyev",234);
@@ -64,11 +64,13 @@ public class EmployeeTest {
     public void takeBookExceptionTest1(){
         library.addBook(book6);
     }
+
     @Test(expected = TakeBookException.class)
     public void takeBookExceptionTest2(){
         student.addBook(book1);
         student.addBook(book2);
     }
+
     @Test(expected = TakeBookException.class)
     public void takeBookExceptionTest3(){
         library.giveBook("Архитектура ЭВМ");
@@ -87,5 +89,20 @@ public class EmployeeTest {
         student.readBook(book3);
         assertEquals(readBooksBefore+book3.getPagesCount(), student.getReadPages());
         assertEquals(readBooksBefore+1, student.getReadBooks());
+    }
+
+    @Test
+    public void assertJTest1(){
+        assertThat(student).isNotEqualTo(employee1);
+    }
+
+    @Test
+    public void assertJTest2(){
+        Throwable thrown = catchThrowable( () -> {
+            student.dropBook();
+            student.dropBook();
+        });
+
+        assertThat(thrown).isInstanceOf(TakeBookException.class);
     }
 }
